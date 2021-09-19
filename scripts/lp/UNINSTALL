@@ -1,4 +1,4 @@
-#ident "@(#)pkg.lp:lp/UNINSTALL	1.5"
+#ident	"@(#)pkg.nlp:lp/UNINSTALL	1.2"
 #
 # UNINSTALL the Line Printer Spooling Utilities
 #
@@ -9,15 +9,13 @@ INSPATH=/install/new
 PKGNAME=`cat ${INSPATH}/usr/options/lp.name`
 
 #
-# Clean up some details (scheduler & inittab)
+# Clean up some details.
 #
-
-/install/install/unsetup
+/install/install/uninstall
 
 #
 # Remove the files found in the Rlist file from the hard disk.
 #
-
 echo "Removing the ${PKGNAME}."
 echo "The following files are being removed:"
 for i in `cat /install/install/Rlist`
@@ -25,4 +23,4 @@ do
 	echo $i
 	rm -fr $i
 done
-echo "The ${PKGNAME} has been removed."
+echo "The ${PKGNAME} have been removed."
